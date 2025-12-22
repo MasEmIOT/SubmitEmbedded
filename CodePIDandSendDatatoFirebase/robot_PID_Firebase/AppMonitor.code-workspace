@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../AppMonitor"
+		},
+		{
+			"name": "testApp",
+			"path": "../../testApp"
+		},
+		{
+			"name": "esp32_denso_firebase",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

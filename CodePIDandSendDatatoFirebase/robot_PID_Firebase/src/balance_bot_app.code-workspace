@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../TermProject/AppMonitor/balance_bot_app"
+		},
+		{
+			"name": "esp32_denso_firebase",
+			"path": ".."
+		},
+		{
+			"name": "testApp",
+			"path": "../../../testApp"
+		}
+	],
+	"settings": {}
+}
