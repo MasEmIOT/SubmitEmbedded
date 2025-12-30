@@ -4,11 +4,19 @@
 #include <iomanip>
 
 // ==========================================
+<<<<<<< HEAD
 // 1. MODULE: ROBOT PLANT (CÓ NHIỄU & NGOẠI LỰC)
 // ==========================================
 SC_MODULE(Robot_Plant) {
     sc_in<double> pwm_input;      // Lực từ động cơ
     sc_in<double> dist_input;     // Lực đẩy từ bên ngoài (Cú đá/Gió)
+=======
+// 1. MODULE: ROBOT PLANT
+// ==========================================
+SC_MODULE(Robot_Plant) {
+    sc_in<double> pwm_input;      // Lực từ động cơ
+    sc_in<double> dist_input;     // Lực đẩy từ bên ngoài 
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
     sc_out<double> angle_output;  // Góc nghiêng
 
     double theta;       
@@ -31,7 +39,11 @@ SC_MODULE(Robot_Plant) {
             // Tích phân Euler
             theta_dot += alpha * dt;
             
+<<<<<<< HEAD
             // Giả lập ma sát (Damping) để thực tế hơn (mất 1% năng lượng mỗi tick)
+=======
+            // Giả lập ma sát
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
             theta_dot *= 0.99; 
 
             theta += theta_dot * dt;
@@ -56,7 +68,11 @@ SC_MODULE(PID_Controller) {
     sc_in<double> setpoint_input; // Nhận lệnh điểm đặt (0=đứng, !=0 là đi)
     sc_out<double> pwm_output;
 
+<<<<<<< HEAD
     // Tham số PID (Đã tinh chỉnh cho kịch bản này)
+=======
+    // Tham số PID 
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
     double Kp = 45.0; 
     double Ki = 2.0;
     double Kd = 2.5;
@@ -216,16 +232,28 @@ int sc_main(int argc, char* argv[]) {
     screen.pwm(sig_pwm);
     screen.setpoint(sig_setpoint);
 
+<<<<<<< HEAD
     // Trace file (Vẽ đồ thị)
+=======
+    // Trace file 
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
     sc_trace_file *wf = sc_create_vcd_trace_file("waveforms_diverse");
     sc_trace(wf, sig_angle, "Angle");
     sc_trace(wf, sig_pwm, "PWM");
     sc_trace(wf, sig_setpoint, "Setpoint");
     sc_trace(wf, sig_dist, "Disturbance");
 
+<<<<<<< HEAD
     // Chạy mô phỏng (Scenario Driver sẽ quyết định khi nào dừng)
+=======
+   
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
     sc_start();
 
     sc_close_vcd_trace_file(wf);
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b974c8d5686fb29fbbb400af23a843378e66833f
